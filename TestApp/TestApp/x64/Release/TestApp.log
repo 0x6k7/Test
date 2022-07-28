@@ -1,0 +1,9 @@
+﻿  Base64.cpp
+  TestApp.cpp
+c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(9): error C2039: 'filesystem': is not a member of 'std'
+  d:\vs 2017\vc\tools\msvc\14.16.27023\include\experimental\filesystem(30): note: see declaration of 'std'
+c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(9): error C2878: 'filesystem': a namespace or class of this name does not exist
+c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(15): error C2664: 'BOOL GetComputerNameW(LPWSTR,LPDWORD)': cannot convert argument 1 from 'char [257]' to 'LPWSTR'
+  c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(15): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(31): warning C4551: function call missing argument list
+c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(42): warning C4267: 'argument': conversion from 'size_t' to 'DWORD', possible loss of data
