@@ -4,8 +4,27 @@
 #include <filesystem>
 #include <Lmcons.h>
 #include "Base64.h"
+#include "AntiDump.h"
 #include "md5.h"
 #include "obfuscate.h"
+
+#define JUNK_CODE_ONE        \
+    __asm{push eax}            \
+    __asm{xor eax, eax}        \
+    __asm{setpo al}            \
+    __asm{push edx}            \
+    __asm{xor edx, eax}        \
+    __asm{sal edx, 2}        \
+    __asm{xchg eax, edx}    \
+    __asm{pop edx}            \
+    __asm{or eax, ecx}        \
+    __asm{pop eax}
+
+#define JUNK_CODE_TWO \
+__asm{push eax} \
+ __asm{xor eax, eax} \
+__asm{mov eax,12} \
+__asm{pop eax}
 
 typedef void(*Func)();
 
@@ -21,6 +40,11 @@ string getComputerName() {
 
 int main()
 {
+	ErasePEHeaderFromMemory();
+	SizeOfImage();
+
+	JUNK_CODE_TWO
+
 	Func _Func;
 	HINSTANCE hLibrary = LoadLibrary("TestDLL.dll");
 
@@ -34,9 +58,12 @@ int main()
 	else {
 		cout << "Unable to load protection" << endl;
 		cout << "Closing..." << endl;
+		ExitProcess(1);
 	}
 
 	FreeLibrary(hLibrary);
+
+	JUNK_CODE_ONE
 
 	char value[256];
 	DWORD BufferSize = sizeof(value);
@@ -47,7 +74,9 @@ int main()
 		string key;
 		cin >> key;
 
-		if (key == "D9E6FD0C86E2426F90B22BF38AD29831" || key == "213") {
+		JUNK_CODE_TWO
+
+		if (key == "D9E6FD0C86E2426F90B22BF38AD29831") {
 			if (!getComputerName) {
 				cout << AY_OBFUSCATE("Computer name could have not been retrieved") << endl;
 			}
@@ -74,6 +103,8 @@ int main()
 	}
 
 	else {
+		JUNK_CODE_ONE
+
 		if (regGetValue == 0) {
 			cout << AY_OBFUSCATE("Welcome, ") << getComputerName() << endl;
 		}

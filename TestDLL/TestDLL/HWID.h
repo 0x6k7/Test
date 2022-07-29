@@ -5,3 +5,4 @@
 using namespace std;
 
 string GetHardVolumeInformation();
+void GetGUID();

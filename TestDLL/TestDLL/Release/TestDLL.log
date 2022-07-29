@@ -1,14 +1,17 @@
 ﻿  pch.cpp
   AntiAnalyze.cpp
   HWID.cpp
+c:\users\k0x6k7\source\repos\testdll\testdll\hwid.cpp(52): warning C4307: '*': integral constant overflow
+  MemoryProtection.cpp
   AntiDebug.cpp
-  AntiDump.cpp
   dllmain.cpp
-c:\users\k0x6k7\source\repos\testdll\testdll\dllmain.cpp(10): warning C4005: 'TESTDLL_EXPORTS': macro redefinition
+c:\users\k0x6k7\source\repos\testdll\testdll\dllmain.cpp(11): warning C4005: 'TESTDLL_EXPORTS': macro redefinition
   c:\users\k0x6k7\source\repos\testdll\testdll\pch.cpp: note: see previous definition of 'TESTDLL_EXPORTS'
+c:\users\k0x6k7\source\repos\testdll\testdll\dllmain.cpp(54): warning C4307: '*': integral constant overflow
+c:\users\k0x6k7\source\repos\testdll\testdll\dllmain.cpp(58): warning C4307: '*': integral constant overflow
      Creating library C:\Users\k0x6k7\source\repos\TestDLL\Release\TestDLL.lib and object C:\Users\k0x6k7\source\repos\TestDLL\Release\TestDLL.exp
   Generating code
 c:\users\k0x6k7\source\repos\testdll\testdll\antidebug.cpp(86): warning C4715: 'NtQueryInformationProcess_SystemKernel': not all control paths return a value
-  All 174 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  All 139 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
   TestDLL.vcxproj -> C:\Users\k0x6k7\source\repos\TestDLL\Release\TestDLL.dll

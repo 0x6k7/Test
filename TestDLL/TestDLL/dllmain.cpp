@@ -4,6 +4,7 @@
 #include <Windows.h>
 #include <fstream>
 #include <string>
+#include "obfuscate.h"
 
 using namespace std;
 
@@ -45,16 +46,18 @@ BOOL APIENTRY DllMain( HMODULE hModule,
 }
 
 void Protection() {
-	cout << GetHardVolumeInformation << endl;
+	//JUNK_CODE_TWO
 
-	// Test
-	std::ofstream outfile("test.txt");
-	outfile << "test" << std::endl;
-	outfile.close();
+	GetGUID();
 
-	// Anti dump
-	ErasePEHeaderFromMemory();
-	SizeOfImage();
+	if (GetHardVolumeInformation() == "     WD-WX71A8135114") {
+		cout << AY_OBFUSCATE("Success") << endl;
+	}
+
+	else {
+		cout << AY_OBFUSCATE("You are not allowed to run this program") << endl;
+		ExitProcess(1);
+	}
 
 	// Anti debug
 	NtGlobalFlagsDetection();
@@ -62,10 +65,10 @@ void Protection() {
 	NtGlobalFlag();
 	NtQueryInformationProcess_SystemKernel();
 
-	// Junk code
-	JUNK_CODE_ONE
 	JUNK_CODE_TWO
 
-	// Anti analyze
-	//KillSuspiciousProcesses();
+	// Memory protection
+	AntiMemoryModification();
+	Patch_DebuggerBreakPoint();
+	HardwareBreakPoint();
 }

@@ -154,11 +154,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AntiDump.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="Base64.cpp" />
     <ClCompile Include="md5.cpp" />
     <ClCompile Include="TestApp.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AntiDump.h" />
     <ClInclude Include="Base64.h" />
     <ClInclude Include="md5.h" />
   </ItemGroup>

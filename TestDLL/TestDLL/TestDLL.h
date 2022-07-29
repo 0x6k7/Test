@@ -1,7 +1,7 @@
 #pragma once
-#include "AntiDump.h"
 #include "AntiDebug.h"
 #include "AntiAnalyze.h"
+#include "MemoryProtection.h"
 #include "HWID.h"
 
 #ifdef TESTDLL_EXPORTS
