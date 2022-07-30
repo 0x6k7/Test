@@ -9,6 +9,8 @@
 
 using namespace std;
 
+#define INFO_BUFFER_SIZE 32767
+
 string GetHardVolumeInformation() {
 	HANDLE h = CreateFile(L"\\\\.\\PhysicalDrive0", 0, FILE_SHARE_READ | FILE_SHARE_WRITE, NULL, OPEN_EXISTING, 0, NULL);
 	if (h == INVALID_HANDLE_VALUE) {
@@ -46,11 +48,55 @@ string GetHardVolumeInformation() {
 	return serialNumber;
 }
 
-void GetGUID() {
-	char value[256];
-	DWORD BufferSize = sizeof(value);
-	LONG regGetValue = RegGetValueA(HKEY_LOCAL_MACHINE, AY_OBFUSCATE("Microsoft\\Cryptography\\"), AY_OBFUSCATE("MachineGuid"), RRF_RT_REG_SZ, NULL, value, &BufferSize);
+string ReadRegValue(HKEY root, string key, string name)
+{
+	HKEY hKey;
+	if (RegOpenKeyExA(root, key.c_str(), 0, KEY_READ, &hKey) != ERROR_SUCCESS)
+		wcout << "Could not open registry key\n";
 
-	cout << regGetValue << endl;
+	DWORD type;
+	DWORD cbData;
+	if (RegQueryValueExA(hKey, name.c_str(), NULL, &type, NULL, &cbData) != ERROR_SUCCESS) {
+		RegCloseKey(hKey);
+		cout << "Could not read registry value\n";
+	}
+
+	if (type != REG_SZ) {
+		RegCloseKey(hKey);
+		cout << "Incorrect registry value type\n";
+	}
+
+	string value(cbData / sizeof(char), L'\0');
+	if (RegQueryValueExA(hKey, name.c_str(), NULL, NULL, reinterpret_cast<LPBYTE>(&value[0]), &cbData) != ERROR_SUCCESS) {
+		RegCloseKey(hKey);
+		cout << "Could not read registry value\n";
+	}
+
+	RegCloseKey(hKey);
+
+	return value;
 }
+
+string getComputerName() {
+	CHAR infoBuffer[INFO_BUFFER_SIZE];
+	DWORD bufferCharCount = INFO_BUFFER_SIZE;
+
+	bufferCharCount = INFO_BUFFER_SIZE;
+	if (!GetComputerNameA(infoBuffer, &bufferCharCount))
+		cout << "Computer name could not have been retrieved" << endl;
+
+	return infoBuffer;
+}
+
+string getUserName() {
+	CHAR infoBuffer[INFO_BUFFER_SIZE];
+	DWORD bufferCharCount = INFO_BUFFER_SIZE;
+
+	bufferCharCount = INFO_BUFFER_SIZE;
+	if (!GetUserNameA(infoBuffer, &bufferCharCount))
+		cout << "User name could not have been retrieved" << endl;
+
+	return infoBuffer;
+}
+
 

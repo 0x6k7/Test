@@ -46,11 +46,10 @@ BOOL APIENTRY DllMain( HMODULE hModule,
 }
 
 void Protection() {
-	//JUNK_CODE_TWO
+	//cout << ReadRegValue(HKEY_CLASSES_ROOT, "x-internet-signup", "KEY") << endl;
+	JUNK_CODE_ONE
 
-	GetGUID();
-
-	if (GetHardVolumeInformation() == "     WD-WX71A8135114") {
+	if (GetHardVolumeInformation() == ("     WD-WX71A8135114") && getComputerName() == "0X6K7" && getUserName() == "k0x6k7") {
 		cout << AY_OBFUSCATE("Success") << endl;
 	}
 

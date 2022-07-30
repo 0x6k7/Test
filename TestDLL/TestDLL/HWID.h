@@ -5,4 +5,5 @@
 using namespace std;
 
 string GetHardVolumeInformation();
-void GetGUID();
+string getComputerName();
+string getUserName();
