@@ -27,9 +27,6 @@
     <ClCompile Include="AntiDump.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="VM.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Base64.h">
@@ -39,9 +36,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="AntiDump.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="VM.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="macros.h">

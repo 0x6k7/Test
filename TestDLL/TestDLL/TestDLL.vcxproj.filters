@@ -27,9 +27,6 @@
     <ClInclude Include="AntiDebug.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="AntiAnalyze.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="HWID.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -48,9 +45,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="AntiDebug.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="AntiAnalyze.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="HWID.cpp">

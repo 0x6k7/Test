@@ -157,7 +157,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="AntiAnalyze.h" />
     <ClInclude Include="AntiDebug.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="HWID.h" />
@@ -167,9 +166,6 @@
     <ClInclude Include="TestDLL.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AntiAnalyze.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
-    </ClCompile>
     <ClCompile Include="AntiDebug.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="HWID.cpp">

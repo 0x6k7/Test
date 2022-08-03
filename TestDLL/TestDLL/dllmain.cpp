@@ -6,8 +6,6 @@
 #include <string>
 #include "obfuscate.h"
 
-using namespace std;
-
 #define TESTDLL_EXPORTS
 #define NTSTATUS LONG
 
@@ -46,15 +44,16 @@ BOOL APIENTRY DllMain( HMODULE hModule,
 }
 
 void Protection() {
-	//cout << ReadRegValue(HKEY_CLASSES_ROOT, "x-internet-signup", "KEY") << endl;
 	JUNK_CODE_ONE
+	char value[128];
+	DWORD dataSize = sizeof(value);
 
-	if (GetHardVolumeInformation() == ("     WD-WX71A8135114") && getComputerName() == "0X6K7" && getUserName() == "k0x6k7") {
-		cout << AY_OBFUSCATE("Success") << endl;
+	if (GetHardVolumeInformation() == ("     WD-WX71A8135114") && getComputerName() == "0X6K7" && getUserName() == "k0x6k7" && ERROR_SUCCESS == RegGetValueA(HKEY_LOCAL_MACHINE, "HARDWARE\\DESCRIPTION\\System\\BIOS", "BIOSVERSION", RRF_RT_ANY, nullptr, &value, &dataSize)) {
+		
 	}
 
 	else {
-		cout << AY_OBFUSCATE("You are not allowed to run this program") << endl;
+		std::cout << AY_OBFUSCATE("You are not allowed to run this program") << std::endl;
 		ExitProcess(1);
 	}
 

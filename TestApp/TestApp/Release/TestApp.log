@@ -5,18 +5,22 @@ c:\users\k0x6k7\source\repos\testapp\testapp\md5.cpp(310): warning C4996: 'sprin
   d:\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1774): note: see declaration of 'sprintf'
   TestApp.cpp
 c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(41): warning C4307: '*': integral constant overflow
+c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(63): warning C4307: '*': integral constant overflow
 c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(64): warning C4307: '*': integral constant overflow
-c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(65): warning C4307: '*': integral constant overflow
 c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(75): warning C4307: '*': integral constant overflow
 c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(78): warning C4307: '*': integral constant overflow
 c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(86): warning C4307: '*': integral constant overflow
 c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(87): warning C4307: '*': integral constant overflow
-c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(91): warning C4307: '*': integral constant overflow
-c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(96): warning C4307: '*': integral constant overflow
-c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(100): warning C4307: '*': integral constant overflow
-c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(108): warning C4307: '*': integral constant overflow
-  VM.cpp
+c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(92): warning C4307: '*': integral constant overflow
+c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(103): warning C4307: '*': integral constant overflow
+c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(114): warning C4307: '*': integral constant overflow
+c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(126): warning C4307: '*': integral constant overflow
+c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(132): warning C4307: '*': integral constant overflow
+c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(144): warning C4307: '*': integral constant overflow
+c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(156): warning C4307: '*': integral constant overflow
+c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(168): warning C4307: '*': integral constant overflow
+c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(174): warning C4307: '*': integral constant overflow
   Generating code
-  All 217 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  All 244 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
   TestApp.vcxproj -> C:\Users\k0x6k7\source\repos\TestApp\Release\TestApp.exe

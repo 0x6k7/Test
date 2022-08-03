@@ -2,4 +2,3 @@
 #include <Windows.h>
 
 void ErasePEHeaderFromMemory();
-void SizeOfImage();

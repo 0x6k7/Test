@@ -1,11 +1,10 @@
 c:\users\k0x6k7\source\repos\testdll\testdll\release\testdll.pch
 c:\users\k0x6k7\source\repos\testdll\testdll\release\vc141.pdb
 c:\users\k0x6k7\source\repos\testdll\testdll\release\pch.obj
-c:\users\k0x6k7\source\repos\testdll\testdll\release\memoryprotection.obj
-c:\users\k0x6k7\source\repos\testdll\testdll\release\hwid.obj
-c:\users\k0x6k7\source\repos\testdll\testdll\release\antianalyze.obj
 c:\users\k0x6k7\source\repos\testdll\testdll\release\dllmain.obj
 c:\users\k0x6k7\source\repos\testdll\testdll\release\antidebug.obj
+c:\users\k0x6k7\source\repos\testdll\testdll\release\memoryprotection.obj
+c:\users\k0x6k7\source\repos\testdll\testdll\release\hwid.obj
 c:\users\k0x6k7\source\repos\testdll\release\testdll.dll
 c:\users\k0x6k7\source\repos\testdll\release\testdll.lib
 c:\users\k0x6k7\source\repos\testdll\release\testdll.exp
