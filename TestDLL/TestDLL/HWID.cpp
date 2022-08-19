@@ -2,12 +2,9 @@
 #include <string>
 #include <Windows.h>
 #include <memory>
-#include <iphlpapi.h>
 #include "obfuscate.h"
 
 #pragma comment(lib, "user32.lib")
-
-//#pragma warning(disable : 4996)
 
 using namespace std;
 
@@ -54,24 +51,24 @@ string ReadRegValue(HKEY root, string key, string name)
 {
 	HKEY hKey;
 	if (RegOpenKeyExA(root, key.c_str(), 0, KEY_READ, &hKey) != ERROR_SUCCESS)
-		wcout << "Could not open registry key\n";
+		wcout << AY_OBFUSCATE("Could not open registry key\n");
 
 	DWORD type;
 	DWORD cbData;
 	if (RegQueryValueExA(hKey, name.c_str(), NULL, &type, NULL, &cbData) != ERROR_SUCCESS) {
 		RegCloseKey(hKey);
-		cout << "Could not read registry value\n";
+		cout << AY_OBFUSCATE("Could not read registry value\n");
 	}
 
 	if (type != REG_SZ) {
 		RegCloseKey(hKey);
-		cout << "Incorrect registry value type\n";
+		cout << AY_OBFUSCATE("Incorrect registry value type\n");
 	}
 
 	string value(cbData / sizeof(char), L'\0');
 	if (RegQueryValueExA(hKey, name.c_str(), NULL, NULL, reinterpret_cast<LPBYTE>(&value[0]), &cbData) != ERROR_SUCCESS) {
 		RegCloseKey(hKey);
-		cout << "Could not read registry value\n";
+		cout << AY_OBFUSCATE("Could not read registry value\n");
 	}
 
 	RegCloseKey(hKey);
@@ -85,7 +82,7 @@ string getComputerName() {
 
 	bufferCharCount = INFO_BUFFER_SIZE;
 	if (!GetComputerNameA(infoBuffer, &bufferCharCount))
-		cout << "Computer name could not have been retrieved" << endl;
+		cout << AY_OBFUSCATE("Computer name could not have been retrieved") << endl;
 
 	return infoBuffer;
 }
@@ -96,7 +93,7 @@ string getUserName() {
 
 	bufferCharCount = INFO_BUFFER_SIZE;
 	if (!GetUserNameA(infoBuffer, &bufferCharCount))
-		cout << "User name could not have been retrieved" << endl;
+		cout << AY_OBFUSCATE("User name could not have been retrieved") << endl;
 
 	return infoBuffer;
 }

@@ -2,8 +2,6 @@
 #include <Windows.h>
 #include <string>
 
-using namespace std;
-
-string GetHardVolumeInformation();
-string getComputerName();
-string getUserName();
+std::string GetHardVolumeInformation();
+std::string getComputerName();
+std::string getUserName();

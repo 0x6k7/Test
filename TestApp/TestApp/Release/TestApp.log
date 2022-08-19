@@ -4,23 +4,25 @@
 c:\users\k0x6k7\source\repos\testapp\testapp\md5.cpp(310): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   d:\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1774): note: see declaration of 'sprintf'
   TestApp.cpp
-c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(41): warning C4307: '*': integral constant overflow
-c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(63): warning C4307: '*': integral constant overflow
-c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(64): warning C4307: '*': integral constant overflow
+c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(39): warning C4307: '*': integral constant overflow
+c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(52): warning C4307: '*': integral constant overflow
+c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(54): warning C4307: '*': integral constant overflow
+c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(62): warning C4307: '*': integral constant overflow
 c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(75): warning C4307: '*': integral constant overflow
-c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(78): warning C4307: '*': integral constant overflow
-c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(86): warning C4307: '*': integral constant overflow
+c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(76): warning C4307: '*': integral constant overflow
+c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(79): warning C4307: '*': integral constant overflow
 c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(87): warning C4307: '*': integral constant overflow
-c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(92): warning C4307: '*': integral constant overflow
-c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(103): warning C4307: '*': integral constant overflow
-c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(114): warning C4307: '*': integral constant overflow
-c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(126): warning C4307: '*': integral constant overflow
-c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(132): warning C4307: '*': integral constant overflow
-c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(144): warning C4307: '*': integral constant overflow
-c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(156): warning C4307: '*': integral constant overflow
-c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(168): warning C4307: '*': integral constant overflow
-c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(174): warning C4307: '*': integral constant overflow
+c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(88): warning C4307: '*': integral constant overflow
+c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(93): warning C4307: '*': integral constant overflow
+c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(105): warning C4307: '*': integral constant overflow
+c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(117): warning C4307: '*': integral constant overflow
+c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(130): warning C4307: '*': integral constant overflow
+c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(136): warning C4307: '*': integral constant overflow
+c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(148): warning C4307: '*': integral constant overflow
+c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(160): warning C4307: '*': integral constant overflow
+c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(172): warning C4307: '*': integral constant overflow
+c:\users\k0x6k7\source\repos\testapp\testapp\testapp.cpp(178): warning C4307: '*': integral constant overflow
   Generating code
-  All 244 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  All 317 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
   TestApp.vcxproj -> C:\Users\k0x6k7\source\repos\TestApp\Release\TestApp.exe

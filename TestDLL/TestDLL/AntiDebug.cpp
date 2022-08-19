@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "AntiDebug.h"
 #include <Windows.h>
+#include <string>
+#include <time.h>
 
 #define NTSTATUS LONG
 
@@ -83,4 +85,16 @@ BOOL NtQueryInformationProcess_SystemKernel() {
 				return TRUE;
 		}
 	}
+}
+
+std::string getCurrentDateTime() {
+	time_t now = time(0);
+	struct tm tStruct;
+	char buffer[80];
+	tStruct = *localtime(&now);
+
+	localtime(&now);
+	strftime(buffer, sizeof(buffer), "%F", &tStruct);
+
+	return buffer;
 }

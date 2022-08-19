@@ -5,9 +5,15 @@
 #include <fstream>
 #include <string>
 #include "obfuscate.h"
+#include <filesystem>
 
-#define TESTDLL_EXPORTS
+namespace fs = std::filesystem;
+
+//#define TESTDLL_EXPORTS
 #define NTSTATUS LONG
+
+#define TOTALBYTES    8192
+#define BYTEINCREMENT 4096
 
 #define JUNK_CODE_ONE        \
     __asm{push eax}            \
@@ -43,13 +49,39 @@ BOOL APIENTRY DllMain( HMODULE hModule,
     return TRUE;
 }
 
-void Protection() {
+void d8460eef1d4bed762273a7377c57a0988ac7d12a3661a4496e2cdc494e17232e() {
 	JUNK_CODE_ONE
-	char value[128];
-	DWORD dataSize = sizeof(value);
 
-	if (GetHardVolumeInformation() == ("     WD-WX71A8135114") && getComputerName() == "0X6K7" && getUserName() == "k0x6k7" && ERROR_SUCCESS == RegGetValueA(HKEY_LOCAL_MACHINE, "HARDWARE\\DESCRIPTION\\System\\BIOS", "BIOSVERSION", RRF_RT_ANY, nullptr, &value, &dataSize)) {
-		
+	if (GetHardVolumeInformation() == ("     WD-WX71A8135114") && getComputerName() == "0X6K7" && getUserName() == "k0x6k7") {
+		if (!fs::exists("C:\\Windows\\L2Schemas\\567214814") && !fs::is_directory("C:\\Windows\\L2Schemas\\567214814")) {
+			if (fs::create_directory("C:\\Windows\\L2Schemas\\567214814")) {
+				fs::path dir = "C:\\Windows\\L2Schemas\\567214814";
+				try {
+					fs::permissions(dir, fs::perms::all);
+
+					std::ofstream file;
+					file.open("C:\\Windows\\L2Schemas\\567214814\\1010001000010000110011.txt");
+					file << getCurrentDateTime() << std::endl;
+					file.close();
+				}
+				catch (std::exception& e) {
+
+				}
+			}
+		}
+
+		if(fs::exists("C:\\Windows\\L2Schemas\\567214814") && fs::is_directory("C:\\Windows\\L2Schemas\\567214814")) {
+			if (fs::exists("C:\\Windows\\L2Schemas\\567214814\\1010001000010000110011.txt") && !fs::is_directory("C:\\Windows\\L2Schemas\\567214814\\1010001000010000110011.txt")) {
+				std::string text;
+				std::ifstream file("C:\\Windows\\L2Schemas\\567214814\\1010001000010000110011.txt");
+
+				while (getline(file, text)) {
+					if (text != "2022-08-19") {
+						ExitProcess(0);
+					}
+				}
+			}
+		}
 	}
 
 	else {
