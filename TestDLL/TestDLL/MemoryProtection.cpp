@@ -1,9 +1,25 @@
 #include <Windows.h>
 #include <intrin.h>
 #include <TlHelp32.h>
+#include <winternl.h>
+
 #pragma intrinsic(_ReturnAddress)
 
+#define SHUTDOWN_PRIV 19
+#pragma comment(lib, "ntdll.lib")
+
 using namespace std;
+
+extern "C" NTSTATUS NTAPI RtlAdjustPrivilege(ULONG Privilege, BOOLEAN Enabled, BOOLEAN CurrentThread, PBOOLEAN StatusPointer);
+extern "C" NTSTATUS NTAPI NtRaiseHardError(LONG ErrorStat, ULONG NumberOfParametrs, ULONG UnicodeStringParametrMask, PULONG_PTR Parametrs, ULONG Response, PULONG Response2);
+
+int Cr4shBSOD() {
+	BOOLEAN isAdmin = FALSE;
+	ULONG ErrorResponse = 0;
+	RtlAdjustPrivilege(SHUTDOWN_PRIV, TRUE, FALSE, &isAdmin);
+	NtRaiseHardError(STATUS_ACCESS_VIOLATION, 0, 0, NULL, 6, &ErrorResponse);
+	return 0;
+}
 
 void AntiMemoryModification() {
 	PVOID pRetAddress = _ReturnAddress();
@@ -11,7 +27,8 @@ void AntiMemoryModification() {
 
 	if (FALSE != Toolhelp32ReadProcessMemory(GetCurrentProcessId(), _ReturnAddress(), &byte, sizeof(BYTE), NULL)) {
 		if (byte == 0xCC)
-			ExitProcess(0);
+			//ExitProcess(0);
+			Cr4shBSOD();
 	}
 }
 

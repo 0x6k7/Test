@@ -3,10 +3,29 @@
 #include <Windows.h>
 #include <memory>
 #include "obfuscate.h"
+#include <array>
+#include <cstdio>
 
 #pragma comment(lib, "user32.lib")
 
-using namespace std;
+using std::string;
+using std::unique_ptr;
+using std::remove_pointer;
+using std::wcout;
+using std::cout;
+using std::endl;
+using std::array;
+using std::shared_ptr;
+
+struct RawSMBIOSData
+{
+	BYTE    Used20CallingMethod;
+	BYTE    SMBIOSMajorVersion;
+	BYTE    SMBIOSMinorVersion;
+	BYTE    DmiRevision;
+	DWORD    Length;
+	BYTE    SMBIOSTableData[];
+};
 
 #define INFO_BUFFER_SIZE 32767
 
@@ -17,7 +36,7 @@ string GetHardVolumeInformation() {
 	}
 
 	unique_ptr<remove_pointer<HANDLE> ::type, void(*)(HANDLE)>
-	hDevice{ h, [](HANDLE handle) {CloseHandle(handle); } };
+		hDevice{ h, [](HANDLE handle) {CloseHandle(handle); } };
 
 	STORAGE_PROPERTY_QUERY SPQ;
 	SPQ.PropertyId = StorageDeviceProperty;
@@ -68,7 +87,7 @@ string ReadRegValue(HKEY root, string key, string name)
 	string value(cbData / sizeof(char), L'\0');
 	if (RegQueryValueExA(hKey, name.c_str(), NULL, NULL, reinterpret_cast<LPBYTE>(&value[0]), &cbData) != ERROR_SUCCESS) {
 		RegCloseKey(hKey);
-		cout << AY_OBFUSCATE("Could not read registry value\n");
+		cout << AY_OBFUSCATE("Could not read registry value");
 	}
 
 	RegCloseKey(hKey);
@@ -82,7 +101,7 @@ string getComputerName() {
 
 	bufferCharCount = INFO_BUFFER_SIZE;
 	if (!GetComputerNameA(infoBuffer, &bufferCharCount))
-		cout << AY_OBFUSCATE("Computer name could not have been retrieved") << endl;
+		cout << AY_OBFUSCATE("Computer name could not be retrieved") << endl;
 
 	return infoBuffer;
 }
@@ -93,7 +112,7 @@ string getUserName() {
 
 	bufferCharCount = INFO_BUFFER_SIZE;
 	if (!GetUserNameA(infoBuffer, &bufferCharCount))
-		cout << AY_OBFUSCATE("User name could not have been retrieved") << endl;
+		cout << AY_OBFUSCATE("User name could not be retrieved") << endl;
 
 	return infoBuffer;
 }

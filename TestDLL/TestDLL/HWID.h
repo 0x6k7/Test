@@ -2,6 +2,9 @@
 #include <Windows.h>
 #include <string>
 
-std::string GetHardVolumeInformation();
-std::string getComputerName();
-std::string getUserName();
+using std::string;
+
+string GetHardVolumeInformation();
+string getComputerName();
+string getUserName();
+string ReadRegValue(HKEY root, string key, string name);

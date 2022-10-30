@@ -1,23 +1,25 @@
 ﻿  pch.cpp
   AntiDebug.cpp
-c:\users\k0x6k7\source\repos\testdll\testdll\antidebug.cpp(94): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\k0x6k7\source\repos\testdll\testdll\antidebug.cpp(95): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   d:\windows kits\10\include\10.0.17763.0\ucrt\time.h(506): note: see declaration of 'localtime'
-c:\users\k0x6k7\source\repos\testdll\testdll\antidebug.cpp(96): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\k0x6k7\source\repos\testdll\testdll\antidebug.cpp(97): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   d:\windows kits\10\include\10.0.17763.0\ucrt\time.h(506): note: see declaration of 'localtime'
   dllmain.cpp
-c:\users\k0x6k7\source\repos\testdll\testdll\dllmain.cpp(88): warning C4307: '*': integral constant overflow
-c:\users\k0x6k7\source\repos\testdll\testdll\dllmain.cpp(67): warning C4101: 'e': unreferenced local variable
+c:\users\k0x6k7\source\repos\testdll\testdll\dllmain.cpp(115): warning C4307: '*': integral constant overflow
+c:\users\k0x6k7\source\repos\testdll\testdll\dllmain.cpp(75): warning C4101: 'e': unreferenced local variable
   HWID.cpp
-c:\users\k0x6k7\source\repos\testdll\testdll\hwid.cpp(54): warning C4307: '*': integral constant overflow
-c:\users\k0x6k7\source\repos\testdll\testdll\hwid.cpp(60): warning C4307: '*': integral constant overflow
-c:\users\k0x6k7\source\repos\testdll\testdll\hwid.cpp(65): warning C4307: '*': integral constant overflow
-c:\users\k0x6k7\source\repos\testdll\testdll\hwid.cpp(71): warning C4307: '*': integral constant overflow
-c:\users\k0x6k7\source\repos\testdll\testdll\hwid.cpp(85): warning C4307: '*': integral constant overflow
-c:\users\k0x6k7\source\repos\testdll\testdll\hwid.cpp(96): warning C4307: '*': integral constant overflow
+c:\users\k0x6k7\source\repos\testdll\testdll\hwid.cpp(27): warning C4200: nonstandard extension used: zero-sized array in struct/union
+  c:\users\k0x6k7\source\repos\testdll\testdll\hwid.cpp(27): note: This member will be ignored by a defaulted constructor or copy/move assignment operator
+c:\users\k0x6k7\source\repos\testdll\testdll\hwid.cpp(73): warning C4307: '*': integral constant overflow
+c:\users\k0x6k7\source\repos\testdll\testdll\hwid.cpp(79): warning C4307: '*': integral constant overflow
+c:\users\k0x6k7\source\repos\testdll\testdll\hwid.cpp(84): warning C4307: '*': integral constant overflow
+c:\users\k0x6k7\source\repos\testdll\testdll\hwid.cpp(90): warning C4307: '*': integral constant overflow
+c:\users\k0x6k7\source\repos\testdll\testdll\hwid.cpp(104): warning C4307: '*': integral constant overflow
+c:\users\k0x6k7\source\repos\testdll\testdll\hwid.cpp(115): warning C4307: '*': integral constant overflow
   MemoryProtection.cpp
      Creating library C:\Users\k0x6k7\source\repos\TestDLL\Release\TestDLL.lib and object C:\Users\k0x6k7\source\repos\TestDLL\Release\TestDLL.exp
   Generating code
-c:\users\k0x6k7\source\repos\testdll\testdll\antidebug.cpp(88): warning C4715: 'NtQueryInformationProcess_SystemKernel': not all control paths return a value
-  All 462 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+c:\users\k0x6k7\source\repos\testdll\testdll\antidebug.cpp(89): warning C4715: 'NtQueryInformationProcess_SystemKernel': not all control paths return a value
+  All 467 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
   TestDLL.vcxproj -> C:\Users\k0x6k7\source\repos\TestDLL\Release\TestDLL.dll

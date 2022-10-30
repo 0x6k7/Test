@@ -3,6 +3,7 @@
 #include <Windows.h>
 #include <string>
 #include <time.h>
+#include <WinUser.h>
 
 #define NTSTATUS LONG
 

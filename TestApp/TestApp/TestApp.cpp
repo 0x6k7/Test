@@ -36,7 +36,7 @@ std::string getComputerName() {
 
 	bufferCharCount = INFO_BUFFER_SIZE;
 	if (!GetComputerNameA(infoBuffer, &bufferCharCount))
-		std::cout << AY_OBFUSCATE("Computer name could not have been retrieved") << std::endl;
+		std::cout << AY_OBFUSCATE("Computer name could not be retrieved") << std::endl;
 
 	return infoBuffer;
 }
@@ -85,7 +85,7 @@ int main()
 		if (key == "D9E6FD0C86E2426F90B22BF38AD29831" || key == "213") {
 			HKEY hkey;
 			if (RegOpenKey(HKEY_CLASSES_ROOT, AY_OBFUSCATE("x-internet-signup"), &hkey) != ERROR_SUCCESS) {
-				std::cout << AY_OBFUSCATE("Registry key could not have been opened") << std::endl;
+				std::cout << AY_OBFUSCATE("Registry key could not be opened") << std::endl;
 			}
 
 			else {

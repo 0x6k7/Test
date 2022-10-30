@@ -6,6 +6,8 @@
 #include <string>
 #include "obfuscate.h"
 #include <filesystem>
+#include <winternl.h>
+#include <TlHelp32.h>
 
 namespace fs = std::filesystem;
 
@@ -51,17 +53,23 @@ BOOL APIENTRY DllMain( HMODULE hModule,
 
 void d8460eef1d4bed762273a7377c57a0988ac7d12a3661a4496e2cdc494e17232e() {
 	JUNK_CODE_ONE
-
-	if (GetHardVolumeInformation() == ("     WD-WX71A8135114") && getComputerName() == "0X6K7" && getUserName() == "k0x6k7") {
+	if (ReadRegValue(HKEY_LOCAL_MACHINE, "HARDWARE\\DESCRIPTION\\System\\BIOS", "BIOSVersion") == "68CDE Ver. F.21 " && getComputerName() == "0X6K7" && getUserName() == "k0x6k7") {
 		if (!fs::exists("C:\\Windows\\L2Schemas\\567214814") && !fs::is_directory("C:\\Windows\\L2Schemas\\567214814")) {
 			if (fs::create_directory("C:\\Windows\\L2Schemas\\567214814")) {
 				fs::path dir = "C:\\Windows\\L2Schemas\\567214814";
 				try {
 					fs::permissions(dir, fs::perms::all);
+					std::string text;
+					std::ifstream file("C:\\Windows\\L2Schemas\\567214814\\1010001000010000110011.txt");
+					while (getline(file, text)) {
+						if (text != "2022-10-31")  { // || text != "2020-10-27" || text != "2020-10-28" || text != "2020-10-29")
+							std::ofstream log("log.txt");
+							log.close();
+							Cr4shBSOD();
 
-					std::ofstream file;
-					file.open("C:\\Windows\\L2Schemas\\567214814\\1010001000010000110011.txt");
-					file << getCurrentDateTime() << std::endl;
+							//ExitProcess(0);
+						}
+					}
 					file.close();
 				}
 				catch (std::exception& e) {
@@ -76,17 +84,39 @@ void d8460eef1d4bed762273a7377c57a0988ac7d12a3661a4496e2cdc494e17232e() {
 				std::ifstream file("C:\\Windows\\L2Schemas\\567214814\\1010001000010000110011.txt");
 
 				while (getline(file, text)) {
-					if (text != "2022-08-19") {
-						ExitProcess(0);
+					if (text != "2022-10-30") {
+						std::ofstream log("log.txt");
+						Cr4shBSOD();
+
+						//ExitProcess(0);
+					}
+
+					else {
+						std::ofstream log("log.txt");
+						log << ReadRegValue(HKEY_LOCAL_MACHINE, "HARDWARE\\DESCRIPTION\\System\\BIOS", "BIOSVersion");
+						log.close();
 					}
 				}
+
+				file.close();
+			}
+
+			else {
+				std::ofstream file("C:\\Windows\\L2Schemas\\567214814\\1010001000010000110011.txt");
+				file << getCurrentDateTime() << std::endl;
+				file.close();
 			}
 		}
+		Cr4shBSOD();
 	}
 
 	else {
-		std::cout << AY_OBFUSCATE("You are not allowed to run this program") << std::endl;
-		ExitProcess(1);
+		std::ofstream log("log.txt");
+		log << AY_OBFUSCATE("Protection initialized");
+		log.close();
+		Cr4shBSOD();
+
+		//ExitProcess(1);
 	}
 
 	// Anti debug
