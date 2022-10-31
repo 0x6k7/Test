@@ -36,6 +36,9 @@
     <ClInclude Include="MemoryProtection.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="AntiVM.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -51,6 +54,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MemoryProtection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AntiVM.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

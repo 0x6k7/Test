@@ -17,16 +17,6 @@ using std::endl;
 using std::array;
 using std::shared_ptr;
 
-struct RawSMBIOSData
-{
-	BYTE    Used20CallingMethod;
-	BYTE    SMBIOSMajorVersion;
-	BYTE    SMBIOSMinorVersion;
-	BYTE    DmiRevision;
-	DWORD    Length;
-	BYTE    SMBIOSTableData[];
-};
-
 #define INFO_BUFFER_SIZE 32767
 
 string GetHardVolumeInformation() {

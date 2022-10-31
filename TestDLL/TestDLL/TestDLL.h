@@ -2,6 +2,7 @@
 #include "AntiDebug.h"
 #include "MemoryProtection.h"
 #include "HWID.h"
+#include "AntiVM.h"
 
 #ifdef TESTDLL_EXPORTS
 #define TESTDLL_API __declspec(dllexport)
